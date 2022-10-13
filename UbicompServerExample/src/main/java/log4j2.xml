@@ -6,7 +6,7 @@
 			filePattern="${env:CATALINA_HOME}/webapps/UbicompServerExample/logs/Ubicomp-%d{yyyy}-%i.log.gz">
 			<PatternLayout
 				pattern="%n%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %-30l %logger{36} ### %msg"
-				header="-- UBICOMP EXAMPLE --" />
+				header="-- UBICOMP SERVER EXAMPLE --" />
 			<Policies>
 				<TimeBasedTriggeringPolicy />
 				<SizeBasedTriggeringPolicy size="10 MB" />
