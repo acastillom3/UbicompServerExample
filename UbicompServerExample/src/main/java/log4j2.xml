@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+	<Appenders>				
+	    <!-- LOG -->
+		<RollingFile name="LogFile" fileName="${env:CATALINA_HOME}/webapps/UbicompServerExample/log.log"
+			filePattern="${env:CATALINA_HOME}/webapps/UbicompServerExample/logs/Ubicomp-%d{yyyy}-%i.log.gz">
+			<PatternLayout
+				pattern="%n%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %-30l %logger{36} ### %msg"
+				header="-- UBICOMP EXAMPLE --" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20"/>
+		</RollingFile>	
+	</Appenders>
+	<Loggers>
+	    <!-- LOG -->
+		<Logger name="log" additivity="FALSE" level="DEBUG">
+            <AppenderRef ref="LogFile" level="DEBUG" />
+        </Logger>
+	</Loggers>
+</Configuration>
